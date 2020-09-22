@@ -1,0 +1,16 @@
+{
+	"name": "mikywow/gls_api",
+	"description": "Implementation of GLS MyAPI in PHP",
+	"authors": [
+		{
+			"name": "Martin Míka",
+			"email": "mikysro@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
