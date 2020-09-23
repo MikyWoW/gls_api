@@ -70,7 +70,7 @@ class Ticket
             
             ^FO630,420
             ^AZR40,40
-            ^FD{$PrintDataInfo->Parcel->DeliveryAddress->Street} {$PrintDataInfo->Parcel->DeliveryAddress->HouseNumber}^FS
+            ^FD{$PrintDataInfo->Parcel->DeliveryAddress->Street} {$PrintDataInfo->Parcel->DeliveryAddress->HouseNumber}{$PrintDataInfo->Parcel->DeliveryAddress->HouseNumberInfo}^FS
             
             ^FO580,420
             ^AZR40,40
