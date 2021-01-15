@@ -24,7 +24,7 @@ class Connection
 
 	private static function parsePDF(array $data) : string
 	{
-		return implode(array_map('chr', $data));
+		return implode('',array_map('chr', $data));
 	}
 
 	private static function getTLD(int $country) : string
@@ -74,11 +74,11 @@ class Connection
 		$request = json_encode($request);
 
 		$curl = curl_init();
+		curl_setopt($curl,CURLOPT_ENCODING , 'gzip');
 		curl_setopt($curl, CURLOPT_POST, 1);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($curl, CURLOPT_TIMEOUT, 30);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $request);
 		curl_setopt($curl, CURLOPT_URL, $this->baseUrl . $method);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Accept: application/json','Content-Type: application/json', 'Content-Length: ' . strlen($request)));

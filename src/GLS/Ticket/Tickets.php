@@ -54,28 +54,28 @@ class Ticket
             ^FO230,330
             ^A0N,0,50
             ^FD{$cod}^FS
-            ^FO740,430
+            ^FO700,430
             ^A0R,0,30
             ^FD{$lang->Recipient}^FS
-            ^FO680,430
+            ^FO640,430
             ^A0R,0,40
             ^FD{$PrintDataInfo->Parcel->DeliveryAddress->Name}^FS
-            ^FO630,430
+            ^FO590,430
             ^A0R,0,40
             ^FD{$PrintDataInfo->Parcel->DeliveryAddress->Street} {$PrintDataInfo->Parcel->DeliveryAddress->HouseNumber}/{$PrintDataInfo->Parcel->DeliveryAddress->HouseNumberInfo}^FS
-            ^FO580,430
+            ^FO540,430
             ^A0R,0,40
             ^FD{$PrintDataInfo->Parcel->DeliveryAddress->ZipCode}^FS
-            ^FO580,570
+            ^FO540,570
             ^A0R,0,40
             ^FD{$PrintDataInfo->Parcel->DeliveryAddress->City}^FS
-            ^FO530,430
+            ^FO490,430
             ^A0R,0,40
             ^FD{$PrintDataInfo->Parcel->DeliveryAddress->CountryIsoCode}^FS
-            ^FO490,430
+            ^FO450,430
             ^A0R,0,23
             ^FD{$PrintDataInfo->Parcel->DeliveryAddress->ContactName}^FS
-            ^FO360,430
+            ^FO320,430
             ^A0R,23,23
             ^TBR,740,100
             ^FD{$lang->glsText}^FS
