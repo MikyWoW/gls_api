@@ -11,8 +11,8 @@ class GetParcelListRequest extends Request
 
 	public function __construct(\DateTime $DateFrom, \DateTime $DateTo, bool $byPrint = false)
 	{
-        $DateFrom = '/Date('.$DateFrom->getTimestamp().')/';
-        $DateTo = '/Date('.$DateTo->getTimestamp().')/';
+        $DateFrom = '/Date('.$DateFrom->getTimestamp().'000)/';
+        $DateTo = '/Date('.$DateTo->getTimestamp().'000)/';
         if($byPrint)
 		{
 			$this->PrintDateFrom = $DateFrom;
