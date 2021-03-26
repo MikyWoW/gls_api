@@ -88,11 +88,13 @@ class Parcel
 	}
 
 	/**
-	* Addressee Only Service !NOT IMPLEMENTED!
+	* Addressee Only Service
 	*/
 	public function addAOS($Value)
 	{
-		throw new \Exception("Not implemented exception.");
+		$s = new Service('AOS');
+		$s->AOSParameter['Value'] = $Value;
+		$this->ServiceList[] = $s;
 	}
 
 	/**
@@ -108,11 +110,13 @@ class Parcel
 	}
 
 	/**
-	* Contact Service !NOT IMPLEMENTED!
+	* Contact Service
 	*/
 	public function addCS1($Value)
 	{
-		throw new \Exception("Not implemented exception.");
+		$s = new Service('SC1');
+		$s->SC1Parameter['Value'] = $Value;
+		$this->ServiceList[] = $s;
 	}
 
 	/**
@@ -146,19 +150,23 @@ class Parcel
 	}
 
 	/**
-	* Flexible Delivery Service !NOT IMPLEMENTED!
+	* Flexible Delivery Service
 	*/
 	public function addFDS($Value)
 	{
-		throw new \Exception("Not implemented exception.");
+		$s = new Service('FDS');
+		$s->FDSParameter['Value'] = $Value;
+		$this->ServiceList[] = $s;
 	}
 
 	/**
-	* Flexible delivery Sms Service !NOT IMPLEMENTED!
+	* Flexible delivery Sms Service
 	*/
 	public function addFSS($Value)
 	{
-		throw new \Exception("Not implemented exception.");
+		$s = new Service('FSS');
+		$s->FSSParameter['Value'] = $Value;
+		$this->ServiceList[] = $s;
 	}
 
 	/**
@@ -253,27 +261,36 @@ class Parcel
 	}
 
 	/**
-	* Scheduled Delivery Service !NOT IMPLEMENTED!
+	* Scheduled Delivery Service
 	*/
-	public function addSDS($TimeFrom,$TimeTo)
+	public function addSDS(\DateTime $TimeFrom, \DateTime $TimeTo)
 	{
-		throw new \Exception("Not implemented exception.");
+		$s = new Service('SDS');
+		$s->SDSParameter['TimeFrom'] = '/Date('.$TimeFrom->getTimestamp().'000)/';
+		$s->SDSParameter['TimeTo'] = '/Date('.$TimeTo->getTimestamp().'000)/';
+		$this->ServiceList[] = $s;
 	}
 
 	/**
-	* SMs service !NOT IMPLEMENTED!
+	* SMs service phone nuber and text of SMS
+	* Example: "+36701234567|#ParcelNr# - Test message.
+	* Variables: #ParcelNr#, #COD#, #PickupDate#, #From_Name#, #ClientRef#
 	*/
 	public function addSM1($Value)
 	{
-		throw new \Exception("Not implemented exception.");
+		$s = new Service('SM1');
+		$s->SM1Parameter['Value'] = $Value;
+		$this->ServiceList[] = $s;
 	}
 
 	/**
-	* SMs pre-advice !NOT IMPLEMENTED!
+	* SMs pre-advice
 	*/
 	public function addSM2($Value)
 	{
-		throw new \Exception("Not implemented exception.");
+		$s = new Service('SM2');
+		$s->SM2Parameter['Value'] = $Value;
+		$this->ServiceList[] = $s;
 	}
 
 	/**
