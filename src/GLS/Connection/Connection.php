@@ -203,9 +203,9 @@ class Connection
 	 * Get parcel statuses.
 	 * Optional POD file is in PDF format. You need set $ReturnPOD to TRUE
 	 */
-	public function GetParcelStatuses(int $ParcelNumber, bool $ReturnPOD = false) : GetParcelStatusResponse
+	public function GetParcelStatuses(int $ParcelNumber, bool $ReturnPOD = false, string $LanguageIsoCode = 'EN') : GetParcelStatusResponse
 	{
-		$response = $this->getResponse('GetParcelStatuses', new GetParcelStatusesRequest($ParcelNumber,$ReturnPOD));
+		$response = $this->getResponse('GetParcelStatuses', new GetParcelStatusesRequest($ParcelNumber,$ReturnPOD,$LanguageIsoCode));
 		$PDO = '';
 		if(isset($response->PDO))
 		{
