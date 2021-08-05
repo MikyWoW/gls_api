@@ -8,7 +8,9 @@ class Ticket
     {
         $result = '';
         $timestamp = substr($PrintDataInfo->Parcel->PickupDate,6,10);
+        $zone = substr($PrintDataInfo->Parcel->PickupDate,19,5);
         $date = new \DateTime("@$timestamp");
+        $date->setTimezone(new \DateTimeZone($zone));
         $date = $date->format($lang->DateFormat);
 
         for ($i = 0; $i < $PrintDataInfo->Parcel->Count; $i++)
