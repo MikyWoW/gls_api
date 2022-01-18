@@ -65,7 +65,7 @@ class Parcel
 	/**
 	* Pick up date. DEFAULT actual date
 	*/
-	public function setPickupDate(\DateTime $date)
+	public function setPickupDate(\DateTime $date) : void
 	{
 		$this->PickupDate = '/Date('.$date->getTimestamp().'000)/';
 	}
@@ -73,7 +73,7 @@ class Parcel
 	/**
 	* Service guaranteed delivery shipment in 24 Hours
 	*/
-	public function add24H()
+	public function add24H() : void
 	{
 		$s = new Service('24H');
 		$this->ServiceList[] = $s;
@@ -82,7 +82,7 @@ class Parcel
 	/**
 	* Agreement about Dangerous goods by Road !NOT IMPLEMENTED!
 	*/
-	public function addADR($AdrItemType,$AmountUnit,$InnerCount,$PackSize,$UnNumber)
+	public function addADR($AdrItemType,$AmountUnit,$InnerCount,$PackSize,$UnNumber) : void
 	{
 		throw new \Exception("Not implemented exception.");
 	}
@@ -90,7 +90,7 @@ class Parcel
 	/**
 	* Addressee Only Service
 	*/
-	public function addAOS($Value)
+	public function addAOS($Value) : void
 	{
 		$s = new Service('AOS');
 		$s->AOSParameter['Value'] = $Value;
@@ -100,7 +100,7 @@ class Parcel
 	/**
 	* Cash On Delivery service
 	*/
-	public function addCOD(float $CODAmount, string $CODReference)
+	public function addCOD(float $CODAmount, string $CODReference) : void
 	{
 		$s = new Service('COD');
 		$this->ServiceList[] = $s;
@@ -112,7 +112,7 @@ class Parcel
 	/**
 	* Contact Service
 	*/
-	public function addCS1($Value)
+	public function addCS1($Value) : void
 	{
 		$s = new Service('SC1');
 		$s->SC1Parameter['Value'] = $Value;
@@ -122,7 +122,7 @@ class Parcel
 	/**
 	* Delivery At Work service
 	*/
-	public function addDAW()
+	public function addDAW() : void
 	{
 		$s = new Service('DAW');
 		$this->ServiceList[] = $s;
@@ -131,7 +131,7 @@ class Parcel
 	/**
 	* Day Definite Service
 	*/
-	public function addDDS(\DateTime $date)
+	public function addDDS(\DateTime $date) : void
 	{
 		$s = new Service('DDS');
 		$s->DDSParameter['Value'] = date_format($date, 'Y-m-d');
@@ -141,7 +141,7 @@ class Parcel
 	/**
 	* Declared Parcel Value service
 	*/
-	public function addDPV(string $StringValue,float $DecimalValue)
+	public function addDPV(string $StringValue,float $DecimalValue) : void
 	{
 		$s = new Service('DPV');
 		$s->DPVParameter['DecimalValue'] = $DecimalValue;
@@ -152,7 +152,7 @@ class Parcel
 	/**
 	* Flexible Delivery Service
 	*/
-	public function addFDS($Value)
+	public function addFDS($Value) : void
 	{
 		$s = new Service('FDS');
 		$s->FDSParameter['Value'] = $Value;
@@ -162,7 +162,7 @@ class Parcel
 	/**
 	* Flexible delivery Sms Service
 	*/
-	public function addFSS($Value)
+	public function addFSS($Value) : void
 	{
 		$s = new Service('FSS');
 		$s->FSSParameter['Value'] = $Value;
@@ -172,7 +172,7 @@ class Parcel
 	/**
 	* Insurance Service
 	*/
-	public function addINS(float $Value)
+	public function addINS(float $Value) : void
 	{
 		$s = new Service('INS');
 		$s->INSParameter['Value'] = $Value;
@@ -182,7 +182,7 @@ class Parcel
 	/**
 	* LDS
 	*/
-	public function addLDS()
+	public function addLDS() : void
 	{
 		$s = new Service('LDS');
 		$this->ServiceList[] = $s;
@@ -191,7 +191,7 @@ class Parcel
 	/**
 	* MCC
 	*/
-	public function addMCC()
+	public function addMCC() : void
 	{
 		$s = new Service('MCC');
 		$this->ServiceList[] = $s;
@@ -200,7 +200,7 @@ class Parcel
 	/**
 	* Middle Man Price service !NOT IMPLEMENTED!
 	*/
-	public function addMMP($Value)
+	public function addMMP($Value) : void
 	{
 		throw new \Exception("Not implemented exception.");
 	}
@@ -208,7 +208,7 @@ class Parcel
 	/**
 	* PCC
 	*/
-	public function addPCC()
+	public function addPCC() : void
 	{
 		$s = new Service('PCC');
 		$this->ServiceList[] = $s;
@@ -217,7 +217,7 @@ class Parcel
 	/**
 	* PRS
 	*/
-	public function addPRS()
+	public function addPRS() : void
 	{
 		$s = new Service('PRS');
 		$this->ServiceList[] = $s;
@@ -226,7 +226,7 @@ class Parcel
 	/**
 	* Parcel Shop Delivery service
 	*/
-	public function addPSD(int $DropOffPointID)
+	public function addPSD(int $DropOffPointID) : void
 	{
 		$s = new Service('PSD');
 		$s->PSDParameter['IntegerValue'] = $DropOffPointID;
@@ -236,7 +236,7 @@ class Parcel
 	/**
 	* Pick & Ship Service
 	*/
-	public function addPSS()
+	public function addPSS() : void
 	{
 		$s = new Service('PSS');
 		$this->ServiceList[] = $s;
@@ -245,7 +245,7 @@ class Parcel
 	/**
 	* SATurday service
 	*/
-	public function addSAT()
+	public function addSAT() : void
 	{
 		$s = new Service('SAT');
 		$this->ServiceList[] = $s;
@@ -254,7 +254,7 @@ class Parcel
 	/**
 	* Stand By Service
 	*/
-	public function addSBS()
+	public function addSBS() : void
 	{
 		$s = new Service('SBS');
 		$this->ServiceList[] = $s;
@@ -263,7 +263,7 @@ class Parcel
 	/**
 	* Scheduled Delivery Service
 	*/
-	public function addSDS(\DateTime $TimeFrom, \DateTime $TimeTo)
+	public function addSDS(\DateTime $TimeFrom, \DateTime $TimeTo) : void
 	{
 		$s = new Service('SDS');
 		$s->SDSParameter['TimeFrom'] = '/Date('.$TimeFrom->getTimestamp().'000)/';
@@ -276,7 +276,7 @@ class Parcel
 	* Example: "+36701234567|#ParcelNr# - Test message.
 	* Variables: #ParcelNr#, #COD#, #PickupDate#, #From_Name#, #ClientRef#
 	*/
-	public function addSM1($Value)
+	public function addSM1($Value) : void
 	{
 		$s = new Service('SM1');
 		$s->SM1Parameter['Value'] = $Value;
@@ -286,7 +286,7 @@ class Parcel
 	/**
 	* SMs pre-advice
 	*/
-	public function addSM2($Value)
+	public function addSM2($Value) : void
 	{
 		$s = new Service('SM2');
 		$s->SM2Parameter['Value'] = $Value;
@@ -296,7 +296,7 @@ class Parcel
 	/**
 	* SRS
 	*/
-	public function addSRS()
+	public function addSRS() : void
 	{
 		$s = new Service('SRS');
 		$this->ServiceList[] = $s;
@@ -305,7 +305,7 @@ class Parcel
 	/**
 	* document return service (SZáLlítólevél visszaforgatás) !NOT IMPLEMENTED!
 	*/
-	public function addSZL($Value)
+	public function addSZL($Value) : void
 	{
 		throw new \Exception("Not implemented exception.");
 	}
@@ -313,7 +313,7 @@ class Parcel
 	/**
 	* Express service T09
 	*/
-	public function addT09()
+	public function addT09() : void
 	{
 		$s = new Service('T09');
 		$this->ServiceList[] = $s;
@@ -322,7 +322,7 @@ class Parcel
 	/**
 	* Express service T10
 	*/
-	public function addT10()
+	public function addT10() : void
 	{
 		$s = new Service('T10');
 		$this->ServiceList[] = $s;
@@ -331,7 +331,7 @@ class Parcel
 	/**
 	* Express service T12
 	*/
-	public function addT12()
+	public function addT12() : void
 	{
 		$s = new Service('T12');
 		$this->ServiceList[] = $s;
@@ -340,7 +340,7 @@ class Parcel
 	/**
 	* Think Green Service
 	*/
-	public function addTGS()
+	public function addTGS() : void
 	{
 		$s = new Service('TGS');
 		$this->ServiceList[] = $s;
@@ -349,7 +349,7 @@ class Parcel
 	/**
 	* Exchange Service
 	*/
-	public function addXS()
+	public function addXS() : void
 	{
 		$s = new Service('XS');
 		$this->ServiceList[] = $s;

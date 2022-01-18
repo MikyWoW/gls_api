@@ -19,9 +19,6 @@ class ModifyCODRequest extends Request
 	 */
 	public float $CODAmount;
 
-	/**
-	* @param int[] $ParcelIdList
-	*/
 	public function __construct(float $CODAmount, int $ParcelId, bool $isParcelNumber)
 	{
 		if($isParcelNumber)

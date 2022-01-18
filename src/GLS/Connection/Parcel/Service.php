@@ -7,7 +7,7 @@ class Service
 	public string $Code;
 	public array $ADRParameter;
 	public array $AOSParameter;
-	public array $CS1Parameter;
+	public array $SC1Parameter;
 	public array $DDSParameter;
 	public array $DPVParameter;
 	public array $FDSParameter;

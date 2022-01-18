@@ -51,7 +51,6 @@ class Connection
 				break;
 			default:
 				throw new \Exception("Invalid country!");
-				break;
 		}
 		return $tld;
 	}
@@ -96,16 +95,12 @@ class Connection
 				break;
 			case 400:
 				throw new \Exception('Bad Request 400: invalid data.');
-				break;
 			case 401:
 				throw new \Exception('Unauthorized 401: invalid username or password.');
-				break;
 			case 404:
 				throw new \Exception('Not Found 404: invalid url path.');
-				break;
 			default:
 				throw new \Exception('Error '.$httpcode);
-				break;
 		}
 		curl_close($curl);
 

@@ -4,7 +4,7 @@ namespace GLS;
 
 class Ticket
 {
-    public static function getTicket($PrintDataInfo, string $currency = '', Language $lang)
+    public static function getTicket($PrintDataInfo, string $currency, Language $lang) : string
     {
         $result = '';
         $timestamp = substr($PrintDataInfo->Parcel->PickupDate,6,10);
@@ -156,7 +156,7 @@ class Ticket
         return $result;
     }
 
-    public static function checkSum(string $barcode)
+    public static function checkSum(string $barcode) : int
     {
         $nums = str_split($barcode);
         $even = 0;
